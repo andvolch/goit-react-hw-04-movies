@@ -10,22 +10,22 @@ export default function Navigation() {
             to='/'
             className={(navData) => navData.isActive ? s.activeLink : s.link}
             >
-            HomePage
+            Home
         </NavLink>
 
         <NavLink 
             to='/movies'
             className={(navData) => navData.isActive ? s.activeLink : s.link}
             >
-            MoviesPage
+            Movies
         </NavLink>
 
-        <NavLink 
+        {/* <NavLink 
             to='/movies/:movieId'
             className={(navData) => navData.isActive ? s.activeLink : s.link}
             >
             MovieDetailsPage
-        </NavLink>
+        </NavLink> */}
         
     </nav>
     )

@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import AppBar from '../AppBar/AppBar';
 import HomePage from '../../pages/HomePage';
+import MoviesPage from '../../pages/MoviesPage';
+import MovieDetailsPage from '../../pages/MovieDetailsPage';
 // import Modal from '../Modal/Modal';
 // import Searchbar from '../Searchbar/Searchbar';
 // import ImageGallery from '../ImageGallery/ImageGallery';
@@ -47,8 +49,19 @@ export default function App() {
   return (
     <div>
       <AppBar />
+
         <Routes>
-          <Route path="/" element={<HomePage/>}/>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies/*" element={<MoviesPage />} >
+            <Route path=":movieId/*" element={<MovieDetailsPage />} >
+            <Route path="cast"
+              // element={<MovieDetailsPage />}
+            />
+            <Route path="reviews"
+              // element={<MovieDetailsPage />}
+            />
+            </Route>
+          </Route>
        
         </Routes>
         
