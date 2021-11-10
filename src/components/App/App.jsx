@@ -8,11 +8,13 @@ import AppBar from '../AppBar/AppBar';
 import HomePage from '../../pages/HomePage';
 import MoviesPage from '../../pages/MoviesPage';
 import MovieDetailsPage from '../../pages/MovieDetailsPage';
+
+import TMDB from '../../services/TMDB';
 // import Modal from '../Modal/Modal';
 // import Searchbar from '../Searchbar/Searchbar';
 // import ImageGallery from '../ImageGallery/ImageGallery';
 
-
+// console.log(TMDB);
 
 export default function App() {
   

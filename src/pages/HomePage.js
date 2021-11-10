@@ -3,6 +3,7 @@ export default function HomePage () {
         <div>
             <span>
                 HomePage
+                
             </span>
         </div>
     )
