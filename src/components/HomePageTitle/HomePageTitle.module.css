@@ -1,0 +1,8 @@
+.title {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  color: #4169e1;
+}
