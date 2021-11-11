@@ -1,36 +1,37 @@
 import PropTypes from 'prop-types';
 import s from './TrendingList.module.css';
-import MoviesList from '../MoviesList/MoviesList';
+import MoviesList from '../ItemList/ItemList';
 
-export default function TrendingList({movies}) {
-    return (
-        <ul className={s.list}>
-            {movies.map(({ id, backdrop_path, original_title, poster_path, release_date, vote_average }) => (
-                <MoviesList
-                    id={id}
-                    backdrop_path={backdrop_path}
-                    original_title={original_title}
-                    poster_path={poster_path}
-                    release_date={release_date}
-                    vote_average={vote_average}
-                    
-                />
-            )
-                
-            )}
-
-        </ul>
-
-    )
-    
-};
-
+export default function TrendingList({ list }) {
+  console.log(list);
+  return (
+    <ul className={s.list}>
+      {list.map(
+        ({
+          id,
+          backdrop_path,
+          original_title,
+          poster_path,
+          release_date,
+          vote_average,
+        }) => (
+          <MoviesList
+            key={id}
+            backdrop_path={backdrop_path}
+            original_title={original_title}
+            poster_path={poster_path}
+            release_date={release_date}
+            vote_average={vote_average}
+          />
+        ),
+      )}
+    </ul>
+  );
+}
 
 TrendingList.propTypes = {
-    movies: PropTypes.array.isRequired,
-  
+  list: PropTypes.array.isRequired,
 };
-
 
 // backdrop_path: "/cinER0ESG0eJ49kXlExM0MEWGxW.jpg"
 // genre_ids: (3) [28, 12, 14]

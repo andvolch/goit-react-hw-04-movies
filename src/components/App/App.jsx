@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 import AppBar from '../AppBar/AppBar';
 import HomePage from '../../pages/HomePage';
 import MoviesPage from '../../pages/MoviesPage';
@@ -17,7 +16,6 @@ import TMDB from '../../services/TMDB';
 // console.log(TMDB);
 
 export default function App() {
-  
   // const [query, setQuery] = useState('');
   // const [page, setPage] = useState(1);
   // const [images, setImages] = useState([]);
@@ -33,7 +31,7 @@ export default function App() {
 
   // const toggleModal = () => {
   //   setShowModal(!showModal);
-    
+
   // };
 
   // const onImageClick = (tags, largeImageURL) => {
@@ -52,48 +50,43 @@ export default function App() {
     <div>
       <AppBar />
 
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/movies/*" element={<MoviesPage />} >
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+
+        {/* <Route path="/movies/*" element={<MoviesPage />} >
             <Route path=":movieId/*" element={<MovieDetailsPage />} >
-            <Route path="cast"
-              // element={<MovieDetailsPage />}
-            />
-            <Route path="reviews"
-              // element={<MovieDetailsPage />}
-            />
+              <Route path="cast"
+                // element={<MovieDetailsPage />}
+              />
+              <Route path="reviews"
+                // element={<MovieDetailsPage />}
+              />
             </Route>
-          </Route>
-       
-        </Routes>
-        
-
+          
+          </Route> */}
+      </Routes>
     </div>
-    
-    
-      // <div>
-      //   <Searchbar
-      //     onSubmit={handleFormSubmit}
-      //   />
-      //   <ImageGallery
-      //     query={query}
-      //     page={page}
-      //     images={images}
-      //     setImages={setImages}
-      //     onImageClick={onImageClick}
-      //     loadMore={loadMore}
-      //   />
-      //   {showModal && (
-      //       <Modal
-      //         onClose={toggleModal}
-      //         tags={tags}
-      //         largeImageURL={largeImageURL}
-      //       />
-      //   )}
-      //   <ToastContainer autoClose={5000} />
-      // </div>
-    );
 
-};
-
-
+    // <div>
+    //   <Searchbar
+    //     onSubmit={handleFormSubmit}
+    //   />
+    //   <ImageGallery
+    //     query={query}
+    //     page={page}
+    //     images={images}
+    //     setImages={setImages}
+    //     onImageClick={onImageClick}
+    //     loadMore={loadMore}
+    //   />
+    //   {showModal && (
+    //       <Modal
+    //         onClose={toggleModal}
+    //         tags={tags}
+    //         largeImageURL={largeImageURL}
+    //       />
+    //   )}
+    //   <ToastContainer autoClose={5000} />
+    // </div>
+  );
+}
