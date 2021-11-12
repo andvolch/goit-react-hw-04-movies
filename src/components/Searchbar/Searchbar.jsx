@@ -4,9 +4,7 @@ import { toast } from 'react-toastify';
 
 import s from './Searchbar.module.css';
 
-
 export default function Searchbar({ onSubmit }) {
-  
   const [query, setQuery] = useState('');
 
   const handleSubmit = e => {
@@ -23,32 +21,27 @@ export default function Searchbar({ onSubmit }) {
     setQuery(e.target.value.toLowerCase());
   };
 
-
   return (
-      <header className={s.searchbar}>
-        <form className={s.searchForm} onSubmit={handleSubmit}>
-          <button type="submit" className={s.searchForm__button}>
-            <span className={s.searchForm__label}>Search images and fotos</span>
-          </button>
-          <input
-            className={s.searchForm__input}
-            type="text"
-            name="search"
-            value={query}
-            // autocomplete="off"
-            // autofocus
-            placeholder="Search images and photos"
-            onChange={handlEqueryChange}
-          />
-        </form>
-      </header>
-    );
-  
-};
-
+    <header className={s.searchbar}>
+      <form className={s.searchForm} onSubmit={handleSubmit}>
+        <button type="submit" className={s.searchForm__button}>
+          <span className={s.searchForm__label}>Search images and fotos</span>
+        </button>
+        <input
+          className={s.searchForm__input}
+          type="text"
+          name="search"
+          value={query}
+          // autocomplete="off"
+          // autofocus
+          placeholder="Search movies"
+          onChange={handlEqueryChange}
+        />
+      </form>
+    </header>
+  );
+}
 
 Searchbar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
-
-
