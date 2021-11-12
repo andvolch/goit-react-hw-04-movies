@@ -8,6 +8,8 @@ import AppBar from '../AppBar/AppBar';
 import HomePage from '../../pages/HomePage';
 import MoviesPage from '../../pages/MoviesPage';
 import MovieDetailsPage from '../../pages/MovieDetailsPage';
+import NotFoundView from '../../pages/NotFoundView';
+
 
 // import Modal from '../Modal/Modal';
 // import Searchbar from '../Searchbar/Searchbar';
@@ -51,8 +53,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/movies/*" element={<MoviesPage />}>
-          <Route path=":movieId/*" element={<MovieDetailsPage />}>
+        <Route path="movies/" element={<MoviesPage />}>
+          <Route path=":movieId/" element={<MovieDetailsPage />}>
             <Route
               path="cast"
               // element={<MovieDetailsPage />}
@@ -63,6 +65,8 @@ export default function App() {
             />
           </Route>
         </Route>
+
+        <Route path="*" element={<NotFoundView/>}/>
       </Routes>
     </Container>
 

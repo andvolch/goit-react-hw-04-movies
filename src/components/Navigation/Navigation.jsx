@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 import s from './Navigation.module.css';
-// console.log(NavLink);
+
 
 export default function Navigation() {
     return (

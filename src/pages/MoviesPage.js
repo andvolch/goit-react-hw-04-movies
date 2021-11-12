@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { searchMovies } from '../services/TMDB';
+
 import Searchbar from '../components/Searchbar/Searchbar';
 import TrendingList from '../components/TrendingList/TrendingList';
 import Button from '../components/Button/Button'
@@ -42,8 +43,14 @@ export default function MoviesPage() {
   return (
     <>
       <Searchbar onSubmit={handleFormSubmit} />
-      <TrendingList list={movies} />
-      <Button loadMore={loadMore}/>
+      {movies && (
+        <>
+          <TrendingList list={movies} />
+          <Button loadMore={loadMore} />
+        </>
+      )
+        
+      }
     </>
   );
 }

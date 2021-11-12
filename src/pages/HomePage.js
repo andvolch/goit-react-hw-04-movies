@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import { getTrending } from '../services/TMDB';
 
 import HomePageTitle from '../components/HomePageTitle/HomePageTitle';

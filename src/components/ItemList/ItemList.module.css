@@ -5,3 +5,9 @@
   /* font-size: 30px; */
   text-align: center;
 }
+
+.text_date {
+  color: #ef008c;
+  margin-left: 5px;
+  font-weight: 500;
+}
