@@ -17,6 +17,7 @@ export default function TrendingList({ list }) {
         }) => (
           <MoviesList
             key={id}
+            movieId={id}
             backdrop_path={backdrop_path}
             original_title={original_title}
             poster_path={poster_path}

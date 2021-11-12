@@ -3,17 +3,15 @@ import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import Container from '../Container/Container';
 import AppBar from '../AppBar/AppBar';
 import HomePage from '../../pages/HomePage';
 import MoviesPage from '../../pages/MoviesPage';
 import MovieDetailsPage from '../../pages/MovieDetailsPage';
 
-import TMDB from '../../services/TMDB';
 // import Modal from '../Modal/Modal';
 // import Searchbar from '../Searchbar/Searchbar';
 // import ImageGallery from '../ImageGallery/ImageGallery';
-
-// console.log(TMDB);
 
 export default function App() {
   // const [query, setQuery] = useState('');
@@ -47,7 +45,7 @@ export default function App() {
   // };
 
   return (
-    <div>
+    <Container>
       <AppBar />
 
       <Routes>
@@ -65,7 +63,7 @@ export default function App() {
           
           </Route> */}
       </Routes>
-    </div>
+    </Container>
 
     // <div>
     //   <Searchbar

@@ -13,7 +13,7 @@ export default function ItemList({
     <li className={s.item}>
       <article>
         <img
-          src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/w780${backdrop_path}`}
           alt={original_title}
         />
         <h3>{original_title}</h3>
