@@ -21,7 +21,7 @@ export async function getTrending(page) {
 }
 
 export async function searchMovies(query, page) {
-  let params = `trending/movie/day?api_key=${KEY_API} search/movie?query=${query}&api_key=${KEY_API}&language=en-US&page=${page}&include_adult=false`;
+  let params = `search/movie?query=${query}&api_key=${KEY_API}&language=en-US&page=${page}&include_adult=false`;
   try {
     const response = await axios.get(params);
     const results = response.data.results;

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import s from './TrendingList.module.css';
-import MoviesList from '../ItemList/ItemList';
+import ItemList from '../ItemList/ItemList';
 
 export default function TrendingList({ list }) {
-  console.log(list);
+  
   return (
     <ul className={s.list}>
       {list.map(
@@ -15,7 +15,7 @@ export default function TrendingList({ list }) {
           release_date,
           vote_average,
         }) => (
-          <MoviesList
+          <ItemList
             key={id}
             movieId={id}
             backdrop_path={backdrop_path}

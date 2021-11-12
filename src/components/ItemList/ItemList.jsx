@@ -26,11 +26,11 @@ export default function ItemList({
 
 ItemList.propTypes = {
   // id: PropTypes.number.isRequired,
-  backdrop_path: PropTypes.string.isRequired,
+  backdrop_path: PropTypes.string,
   original_title: PropTypes.string.isRequired,
-  poster_path: PropTypes.string.isRequired,
-  release_date: PropTypes.string.isRequired,
-  vote_average: PropTypes.number.isRequired,
+  poster_path: PropTypes.string,
+  release_date: PropTypes.string,
+  vote_average: PropTypes.number,
 };
 
 // backdrop_path: "/cinER0ESG0eJ49kXlExM0MEWGxW.jpg"
