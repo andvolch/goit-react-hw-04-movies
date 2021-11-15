@@ -42,7 +42,7 @@ export async function getMovieDetails(movie_id) {
   let params = `movie/${movie_id}?api_key=${KEY_API}&language=en-US`;
   try {
     const response = await axios.get(params);
-    const results = response.data.results;
+    const results = response.data;
 
     // console.log(response)
     // console.log(results);

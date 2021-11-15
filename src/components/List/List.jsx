@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import s from './TrendingList.module.css';
+import s from './List.module.css';
 import ItemList from '../ItemList/ItemList';
 
 export default function TrendingList({ list }) {

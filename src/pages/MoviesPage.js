@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react';
 import { searchMovies } from '../services/TMDB';
 
 import Searchbar from '../components/Searchbar/Searchbar';
-import TrendingList from '../components/TrendingList/TrendingList';
+import TrendingList from '../components/List/List';
 import Button from '../components/Button/Button'
 
 export default function MoviesPage() {
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(null);
 
   const handleFormSubmit = (query) => {
      setQuery(query);
@@ -48,9 +48,8 @@ export default function MoviesPage() {
           <TrendingList list={movies} />
           <Button loadMore={loadMore} />
         </>
-      )
-        
-      }
+      )}
+      
     </>
   );
 }

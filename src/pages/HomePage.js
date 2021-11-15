@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { getTrending } from '../services/TMDB';
 
 import HomePageTitle from '../components/HomePageTitle/HomePageTitle';
-import TrendingList from '../components/TrendingList/TrendingList';
+import List from '../components/List/List';
 
 // console.log(getTrending());
 
@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <>
       <HomePageTitle text={'Trending today'} />
-      <TrendingList list={movies} />
+      <List list={movies} />
     </>
   );
 }
