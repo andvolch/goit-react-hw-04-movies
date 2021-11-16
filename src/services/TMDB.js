@@ -60,7 +60,7 @@ export async function getMovieCredits(movie_id) {
   let params = `movie/${movie_id}/credits?api_key=${KEY_API}&language=en-US`;
   try {
     const response = await axios.get(params);
-    const results = response.data.results;
+    const results = response.data.cast;
 
     // console.log(response)
     // console.log(results);

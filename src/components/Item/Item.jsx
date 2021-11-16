@@ -15,18 +15,26 @@ export default function Item({
   
 
   return (
-    <article>
+    <article className={s.list}>
         <img
             src={`https://image.tmdb.org/t/p/w342${poster_path}`}
             alt={original_title}
-        />
-        <h3>{original_title}</h3>
-          <p>Overview: <span>{overview}</span></p>
-          <p>{homepage}</p>
-          <p>{tagline}</p>
-          <p>{budget}</p>
-          
-        <p>Rating: {vote_average}</p>
+      />
+      <div className={s.block}>
+        <h2>{original_title}</h2>
+
+          <p className={s.title}>
+            Overview: <span className={s.text}>{overview}</span></p>
+          <p className={s.title}>
+            Homepage: <a href={homepage} target='_blank' rel='noreferrer'>{ homepage}</a></p>
+          <p className={s.title}>
+            Tagline: <span className={s.text}>{tagline}</span></p>
+          <p className={s.title}>
+            Budget, $: <span className={s.text}>{budget}</span></p>
+          <p className={s.title}>
+            Rating: <span className={s.text}>{vote_average}</span></p>
+      </div>
+        
     </article>
     
  

@@ -1,7 +1,8 @@
 .list {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
   background-color: #2196f3;
   padding: 10px;
   list-style: none;
+  justify-items: center;
 }

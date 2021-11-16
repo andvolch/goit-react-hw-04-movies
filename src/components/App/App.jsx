@@ -9,43 +9,13 @@ import HomePage from '../../pages/HomePage';
 import MoviesPage from '../../pages/MoviesPage';
 import MovieDetailsPage from '../../pages/MovieDetailsPage';
 import NotFoundView from '../../pages/NotFoundView';
+import Cast from '../Cast/Cast';
+import Reviews from '../Reviews/Reviews'
 
 
-// import Modal from '../Modal/Modal';
-// import Searchbar from '../Searchbar/Searchbar';
-// import ImageGallery from '../ImageGallery/ImageGallery';
 
 export default function App() {
-  // const [query, setQuery] = useState('');
-  // const [page, setPage] = useState(1);
-  // const [images, setImages] = useState([]);
-  // const [showModal, setShowModal] = useState(false);
-  // const [tags, seTtags] = useState('');
-  // const [largeImageURL, setLargeImageURL] = useState('');
-
-  //  const handleFormSubmit = (query) => {
-  //    setQuery(query);
-  //    setPage(1);
-  //    setImages([]);
-  // };
-
-  // const toggleModal = () => {
-  //   setShowModal(!showModal);
-
-  // };
-
-  // const onImageClick = (tags, largeImageURL) => {
-  //   seTtags(tags);
-  //   setLargeImageURL(largeImageURL);
-
-  //   toggleModal();
-  // };
-
-  // const loadMore = () => {
-
-  //     setPage(state => state + 1);
-  // };
-
+  
   return (
     <Container>
       <AppBar />
@@ -53,16 +23,13 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="movies/" element={<MoviesPage />}/>
-        <Route path="movies/:movieId/" element={<MovieDetailsPage />}/>
-            {/* <Route
-              path="cast"
-              element={<MovieDetailsPage />}
-            />
-            <Route
-              path="reviews"
-              element={<MovieDetailsPage />}
-            /> */}
+        <Route path="movies/" element={<MoviesPage />} />
+        
+        <Route path="movies/:movieId/" element={<MovieDetailsPage />}>
+          <Route path="cast" element={<Cast />}/>
+
+          <Route path="reviews" element={<Reviews />}/>
+        </Route>
          
        
 

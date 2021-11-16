@@ -16,7 +16,7 @@ export default function ItemList({
     
       
     <li className={s.item}>
-      <Link to={`/movies/${movieId}`}>
+      <Link to={`/movies/${movieId}`} className={s.link}>
           <article>
             <img
               src={`https://image.tmdb.org/t/p/w780${backdrop_path}`}
