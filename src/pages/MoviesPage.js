@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 
 import { searchMovies } from '../services/TMDB';
-
 import Searchbar from '../components/Searchbar/Searchbar';
-import TrendingList from '../components/List/List';
-import Button from '../components/Button/Button'
+import List from '../components/List/List';
+import Button from '../components/Button/Button';
 
 export default function MoviesPage() {
   const [query, setQuery] = useState('');
@@ -20,7 +19,7 @@ export default function MoviesPage() {
     searchMovies(query, page)
       .then(results => {
         setMovies([...movies, ...results]);
-        // setPage(state => state + 1);
+        
       })
       .catch(error => console.log(error));
   };
@@ -45,7 +44,7 @@ export default function MoviesPage() {
       <Searchbar onSubmit={handleFormSubmit} />
       {movies && (
         <>
-          <TrendingList list={movies} />
+          <List list={movies} />
           <Button loadMore={loadMore} />
         </>
       )}

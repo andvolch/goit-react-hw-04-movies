@@ -26,10 +26,8 @@ export async function searchMovies(query, page) {
     const response = await axios.get(params);
     const results = response.data.results;
 
-    // console.log(response)
-    // console.log(results);
-
     return results;
+
   } catch (error) {
     console.error(error);
   }
@@ -44,10 +42,8 @@ export async function getMovieDetails(movie_id) {
     const response = await axios.get(params);
     const results = response.data;
 
-    // console.log(response)
-    // console.log(results);
-
     return results;
+
   } catch (error) {
     console.error(error);
   }
@@ -62,10 +58,8 @@ export async function getMovieCredits(movie_id) {
     const response = await axios.get(params);
     const results = response.data.cast;
 
-    // console.log(response)
-    // console.log(results);
-
     return results;
+
   } catch (error) {
     console.error(error);
   }
@@ -79,10 +73,8 @@ export async function getMovieReviews(movie_id) {
     const response = await axios.get(params);
     const results = response.data.results;
 
-    // console.log(response)
-    // console.log(results);
-
     return results;
+    
   } catch (error) {
     console.error(error);
   }

@@ -4,8 +4,6 @@ import { getMovieReviews } from '../../services/TMDB';
 
 import s from './Reviews.module.css'
 
-
-
 export default function Reviews() {
     const [reviews, setReviews] = useState([]);
     const { movieId } = useParams();
@@ -14,8 +12,6 @@ export default function Reviews() {
         getMovieReviews(movieId)
             .then(setReviews)
             .catch(error => console.log(error));
-       
-        
     }, []);
    
     return (

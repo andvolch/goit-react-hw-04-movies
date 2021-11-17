@@ -2,6 +2,7 @@ import Loader from 'react-loader-spinner';
 
 import s from './Loader.module.css';
 
+
 const loader = () => (
   <div>
     {' '}
@@ -12,7 +13,7 @@ const loader = () => (
       height={80}
       width={80}
     />
-    ; loading ...
+    {/* loading ... */}
   </div>
 );
 

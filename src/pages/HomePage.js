@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 
 import { getTrending } from '../services/TMDB';
-
 import HomePageTitle from '../components/HomePageTitle/HomePageTitle';
 import List from '../components/List/List';
 
-// console.log(getTrending());
 
 export default function HomePage() {
   const [page, setPage] = useState(1);
@@ -17,11 +15,10 @@ export default function HomePage() {
       .catch(error => console.log(error));
   }, []);
 
-  // console.log(movies);
 
   return (
     <>
-      <HomePageTitle text={'Trending today'} />
+      <HomePageTitle text='Trending today'/>
       <List list={movies} />
     </>
   );

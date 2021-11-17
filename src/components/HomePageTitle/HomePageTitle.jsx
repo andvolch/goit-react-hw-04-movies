@@ -8,5 +8,5 @@ export default function HomePageTitle({text}) {
 
 
 HomePageTitle.propTypes = {
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string,
 };

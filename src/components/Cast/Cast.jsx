@@ -14,8 +14,7 @@ export default function Cast() {
         getMovieCredits(movieId)
             .then(setCasts)
             .catch(error => console.log(error));
-       
-        
+   
     }, []);
    
     return (
