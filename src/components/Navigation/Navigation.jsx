@@ -14,7 +14,7 @@ export default function Navigation() {
         </NavLink>
 
         <NavLink 
-            to='/movies'
+            to='movies'
             className={(navData) => navData.isActive ? s.activeLink : s.link}
             >
             Movies

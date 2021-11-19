@@ -4,8 +4,6 @@ import { getMovieCredits } from '../../services/TMDB';
 
 import s from './Cast.module.css'
 
-
-
 export default function Cast() {
     const [casts, setCasts] = useState([]);
     const { movieId } = useParams();

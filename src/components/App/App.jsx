@@ -13,10 +13,11 @@ import AppBar from '../AppBar/AppBar';
 import Loader from '../Loader/Loader';
 
 
-const HomePage = lazy(() => import('../../pages/HomePage.js' /* webpackChunkName: "home-view" */));
-const MoviesPage = lazy(() => import('../../pages/MoviesPage.js' /* webpackChunkName: "movies-view" */));
-const MovieDetailsPage = lazy(() => import('../../pages/MovieDetailsPage.js' /* webpackChunkName: "details-view" */));
-const NotFoundView = lazy(() => import('../../pages/NotFoundView.js' /* webpackChunkName: "notFound-view" */));
+
+const HomePage = lazy(() => import('../../pages/HomePage.jsx' /* webpackChunkName: "home-view" */));
+const MoviesPage = lazy(() => import('../../pages/MoviesPage.jsx' /* webpackChunkName: "movies-view" */));
+const MovieDetailsPage = lazy(() => import('../../pages/MovieDetailsPage.jsx' /* webpackChunkName: "details-view" */));
+const NotFoundView = lazy(() => import('../../pages/NotFoundView.jsx' /* webpackChunkName: "notFound-view" */));
 
 export default function App() {
   
@@ -28,11 +29,11 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
 
-          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="movies" element={<MoviesPage />} />
           
-          <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
-            <Route path="cast" />
-            <Route path="reviews" />
+          <Route path="movies/:movieId" element={<MovieDetailsPage />}>
+            <Route path="cast"/>
+            <Route path="reviews"/>
           </Route>
           
           <Route path="*" element={<NotFoundView/>}/>

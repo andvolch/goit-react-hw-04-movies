@@ -15,8 +15,9 @@ export default function ItemList({
   return (
     
       
-    <li className={s.item}>
-      <Link to={`/movies/${movieId}`} className={s.link}>
+    
+    <Link key={movieId} to={`/movies/${movieId}`} className={s.link}>
+      <li className={s.item}>
           <article>
             <img
               src={`https://image.tmdb.org/t/p/w780${backdrop_path}`}
@@ -30,8 +31,9 @@ export default function ItemList({
             </p>
             <p>Rating: {vote_average}</p>
           </article>
-      </Link>    
-    </li>
+        
+      </li>
+    </Link>  
       
     
     
