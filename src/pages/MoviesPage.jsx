@@ -13,8 +13,8 @@ export default function MoviesPage() {
 
   // const params = useParams();
   // console.log(params);
-  const location = useLocation();
-  console.log(location);
+  // const location = useLocation();
+  // console.log(location);
 
   // const navigate = useNavigate();
   // console.log(navigate);
@@ -22,18 +22,22 @@ export default function MoviesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   console.log(searchParams);
 
+ 
+
   const handleFormSubmit = (query) => {
     setQuery(query);
+    setSearchParams({ query });
     setPage(1);
     setMovies([]);
-  
   };
+ 
+  
   const getMovies = (query, page) => {
+    
     searchMovies(query, page)
       .then(results => {
         setMovies([...movies, ...results]);
-        
-        
+
         
       })
       .catch(error => console.log(error));
@@ -45,7 +49,6 @@ export default function MoviesPage() {
       return;
     };
     getMovies(query, page);
-    setSearchParams({query});
 
   }, [query, page]);
 
