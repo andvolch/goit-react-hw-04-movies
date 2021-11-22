@@ -10,33 +10,23 @@ export default function ItemList({
   vote_average,
   movieId,
 }) {
-  
-
   return (
-    
-      
-    
     <Link key={movieId} to={`/movies/${movieId}`} className={s.link}>
-      <li className={s.item}>
-          <article>
-            <img
-              src={`https://image.tmdb.org/t/p/w780${backdrop_path}`}
-              alt={original_title}
-            />
-            <h3>{original_title}</h3>
-            <p>Release date:
-              <span className={s.text_date}>
-                {release_date}
-              </span>
-            </p>
-            <p>Rating: {vote_average}</p>
-          </article>
-        
+      <li key={movieId} className={s.item}>
+        <article>
+          <img
+            src={`https://image.tmdb.org/t/p/w780${backdrop_path}`}
+            alt={original_title}
+          />
+          <h3>{original_title}</h3>
+          <p>
+            Release date:
+            <span className={s.text_date}>{release_date}</span>
+          </p>
+          <p>Rating: {vote_average}</p>
+        </article>
       </li>
-    </Link>  
-      
-    
-    
+    </Link>
   );
 }
 
