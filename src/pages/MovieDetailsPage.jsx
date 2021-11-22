@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams, Outlet } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 
 import { getMovieDetails } from '../services/TMDB';
 import Item from '../components/Item/Item';
-import Cast from '../components/Cast/Cast';
-import Reviews from '../components/Reviews/Reviews';
+// import Cast from '../components/Cast/Cast';
+// import Reviews from '../components/Reviews/Reviews';
 import BtnGoBack from '../components/Button/BtnGoBack';
 import s from './PageStyles.module.css';
 
@@ -13,6 +13,7 @@ import s from './PageStyles.module.css';
 export default function MovieDetailsPage() {
     const [movie, setMovie] = useState([]);
     const { movieId } = useParams();
+    
 
     useEffect(() => {
         getMovieDetails(movieId)
@@ -53,11 +54,8 @@ export default function MovieDetailsPage() {
                         </NavLink>
                     </div>
                     
-
-                    <Routes>
-                        <Route path="cast" element={<Cast />} />
-                        <Route path="reviews" element={<Reviews />} />
-                    </Routes>
+                    <Outlet/>
+                    
                 </>
             )}
         </>
