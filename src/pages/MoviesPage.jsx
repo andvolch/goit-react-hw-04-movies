@@ -18,16 +18,6 @@ export default function MoviesPage() {
   const [page, setPage] = useState(1);
   const [movies, setMovies] = useState(null);
 
-  // const params = useParams();
-  // console.log(params);
-  // const location = useLocation();
-  // console.log(location);
-
-  // const navigate = useNavigate();
-  // console.log(navigate);
-
-  // console.log(searchParams);
-
   const handleFormSubmit = query => {
     setQuery(query);
     setSearchParams({ query });
