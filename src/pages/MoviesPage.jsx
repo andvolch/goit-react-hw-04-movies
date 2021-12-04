@@ -1,22 +1,18 @@
 import { useState, useEffect } from 'react';
-import {
-  useParams,
-  useLocation,
-  useNavigate,
-  useSearchParams,
-} from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 import { searchMovies } from '../services/TMDB';
 import Searchbar from '../components/Searchbar/Searchbar';
 import List from '../components/List/List';
 import Button from '../components/Button/Button';
+import { toast } from 'react-toastify';
 
 export default function MoviesPage() {
   let [searchParams, setSearchParams] = useSearchParams();
   let [query, setQuery] = useState(searchParams.get('query'));
-  // const [query, setQuery] = useState('');
+
   const [page, setPage] = useState(1);
-  const [movies, setMovies] = useState(null);
+  const [movies, setMovies] = useState([]);
 
   const handleFormSubmit = query => {
     setQuery(query);
@@ -28,7 +24,7 @@ export default function MoviesPage() {
   const getMovies = (query, page) => {
     searchMovies(query, page)
       .then(results => {
-        setMovies([...results]);
+        setMovies([...movies, ...results]);
       })
       .catch(error => console.log(error));
   };
@@ -37,6 +33,7 @@ export default function MoviesPage() {
     if (!query) {
       return;
     }
+
     getMovies(query, page);
   }, [query, page]);
 
@@ -47,12 +44,8 @@ export default function MoviesPage() {
   return (
     <>
       <Searchbar onSubmit={handleFormSubmit} />
-      {movies && (
-        <>
-          <List list={movies} />
-          <Button loadMore={loadMore} />
-        </>
-      )}
+      {movies.length > 0 && <List list={movies} />}
+      {movies.length > 19 && <Button loadMore={loadMore} />}
     </>
   );
 }

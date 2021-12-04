@@ -4,7 +4,6 @@ import { getTrending } from '../services/TMDB';
 import HomePageTitle from '../components/HomePageTitle/HomePageTitle';
 import List from '../components/List/List';
 
-
 export default function HomePage() {
   const [page, setPage] = useState(1);
   const [movies, setMovies] = useState([]);
@@ -15,11 +14,10 @@ export default function HomePage() {
       .catch(error => console.log(error));
   }, []);
 
-
   return (
     <>
-      <HomePageTitle text='Trending today'/>
-      <List list={movies} />
+      <HomePageTitle text="Trending today" />
+      {movies.length > 0 && <List list={movies} />}
     </>
   );
 }
